@@ -14,31 +14,26 @@ defmodule ReportsGenerator do
 
   @options ["foods", "users"]
 
-  def build(filename) do
-    result =
-      filename
-      |> Parser.parse_file()
-      |> Enum.reduce(init_report(), fn line, report -> sum_values(line, report) end)
-
-    {:ok, result}
+  def build(file_name) do
+    file_name
+    |> Parser.parse_file()
+    |> Enum.reduce(init_report(), fn line, report -> sum_values(line, report) end)
   end
 
-  def build_from_many(filenames) when not is_list(filenames), do: {:error, "Please provide a list of strings"}
+  def build_from_many(file_names) when not is_list(file_names), do: {:error, "Please provide a list of strings"}
 
-  def build_from_many(filenames) do
+  def build_from_many(file_names) do
     result =
-      filenames
+      file_names
       |> Task.async_stream(&build/1)
       |> Enum.reduce(init_report(), fn {:ok, result}, report -> sum_reports(report, result) end)
 
     {:ok, result}
   end
 
-  def fetch_higher_cost({:ok, report}, option) when option in @options do
+  def fetch_higher_cost(report, option) when option in @options do
     {:ok, Enum.max_by(report[option], fn {_key, value} -> value end)}
   end
-
-  def fetch_higher_cost({:error, _reason}, _option), do: {:error, "Invalid report!"}
 
   def fetch_higher_cost(_report, _option), do: {:error, "Invalid option!"}
 
