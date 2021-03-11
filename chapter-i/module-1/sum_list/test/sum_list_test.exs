@@ -9,7 +9,7 @@ defmodule SumListTest do
 
       expected_response = 6
 
-      assert response == expect_response
+      assert response == expected_response
     end
   end
 end

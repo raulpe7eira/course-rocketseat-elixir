@@ -1,21 +1,20 @@
 # SumList
 
-**TODO: Add description**
+This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
-## Installation
+> The project simulates the sum of the numbers like a calculator.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `sum_list` to your list of dependencies in `mix.exs`:
+## Compilation, tests and runs
 
-```elixir
-def deps do
-  [
-    {:sum_list, "~> 0.1.0"}
-  ]
-end
+```bash
+$ cd course-rocketseat-elixir/chapter-i/module-1/sum_list
+$ mix compile
+$ mix test
+$ iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/sum_list](https://hexdocs.pm/sum_list).
+## How to use?
 
+```elixir
+# sum list
+iex> SumList.call([1, 2, 3])
