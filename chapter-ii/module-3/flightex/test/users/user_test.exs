@@ -5,29 +5,17 @@ defmodule Flightex.Users.UserTest do
 
   alias Flightex.Users.User
 
-  describe "build/4" do
-    setup do
-      {:ok, id: UUID.uuid4()}
-    end
+  describe "build/3" do
+    test "when all params are valid, returns the user" do
+      response = User.build("Raul", "raul@mail.com", "65977019092")
 
-    test "when all params are valid, returns the user", %{id: id} do
-      response = User.build(id, "Raul", "raul@mail.com", "65977019092")
-
-      expected_response = {:ok, build(:user, id: id)}
+      expected_response = {:ok, build(:user)}
 
       assert response == expected_response
     end
 
-    test "when there are invalid id, returns an error" do
-      response = User.build("", "Raul", "raul@mail.com", "65977019092")
-
-      expected_response = {:error, "Invalid parameters"}
-
-      assert response == expected_response
-    end
-
-    test "when there are invalid cpf, returns an error", %{id: id} do
-      response = User.build(id, "Raul", "raul@mail.com", 65_977_019_092)
+    test "when there are invalid cpf, returns an error" do
+      response = User.build("Raul", "raul@mail.com", 65_977_019_092)
 
       expected_response = {:error, "Invalid parameters"}
 

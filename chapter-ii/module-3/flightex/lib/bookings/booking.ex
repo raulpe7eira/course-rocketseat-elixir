@@ -1,14 +1,12 @@
 defmodule Flightex.Bookings.Booking do
-  @keys [:id, :data_completa, :cidade_origem, :cidade_destino, :id_usuario]
-  @enforce_keys @keys
+  alias Flightex.Users.User
 
-  defstruct @keys
+  @enforce_keys [:id_usuario, :data_completa, :cidade_origem, :cidade_destino]
+  defstruct [:id, :id_usuario, :data_completa, :cidade_origem, :cidade_destino]
 
-  def build(id, data_completa, cidade_origem, cidade_destino, id_usuario)
-      when byte_size(id) > 1 and byte_size(id_usuario) > 1 do
+  def build(%User{id: id_usuario}, data_completa, cidade_origem, cidade_destino) do
     {:ok,
      %__MODULE__{
-       id: id,
        data_completa: data_completa,
        cidade_origem: cidade_origem,
        cidade_destino: cidade_destino,
@@ -16,6 +14,7 @@ defmodule Flightex.Bookings.Booking do
      }}
   end
 
-  def build(_id, _data_completa, _cidade_origem, _cidade_destino, _id_usuario),
-    do: {:error, "Invalid parameters"}
+  def build(_user, _data_completa, _cidade_origem, _cidade_destino) do
+    {:error, "Invalid parameters"}
+  end
 end

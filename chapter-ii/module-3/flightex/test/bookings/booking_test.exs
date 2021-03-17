@@ -5,31 +5,21 @@ defmodule Flightex.Bookings.BookingTest do
 
   alias Flightex.Bookings.Booking
 
-  describe "build/5" do
+  describe "build/4" do
     setup do
-      {:ok, id: UUID.uuid4(), id_usuario: UUID.uuid4()}
+      {:ok, user: build(:user, id: UUID.uuid4())}
     end
 
-    test "when all params are valid, returns the booking", %{id: id, id_usuario: id_usuario} do
-      response =
-        Booking.build(id, "2021-03-17T11:00:00.000Z", "Rio de Janeiro", "São Paulo", id_usuario)
+    test "when all params are valid, returns the booking", %{user: user} do
+      response = Booking.build(user, "2021-03-17T11:00:00.000Z", "Rio de Janeiro", "São Paulo")
 
-      expected_response = {:ok, build(:booking, id: id, id_usuario: id_usuario)}
+      expected_response = {:ok, build(:booking, id_usuario: user.id)}
 
       assert response == expected_response
     end
 
-    test "when there are invalid id, returns an error", %{id_usuario: id_usuario} do
-      response =
-        Booking.build("", "2021-03-17T11:00:00.000Z", "Rio de Janeiro", "São Paulo", id_usuario)
-
-      expected_response = {:error, "Invalid parameters"}
-
-      assert response == expected_response
-    end
-
-    test "when there are invalid id_usuario, returns an error", %{id: id} do
-      response = Booking.build(id, "2021-03-17T11:00:00.000Z", "Rio de Janeiro", "São Paulo", "")
+    test "when there are invalid id_usuario, returns an error" do
+      response = Booking.build(nil, "2021-03-17T11:00:00.000Z", "Rio de Janeiro", "São Paulo")
 
       expected_response = {:error, "Invalid parameters"}
 
