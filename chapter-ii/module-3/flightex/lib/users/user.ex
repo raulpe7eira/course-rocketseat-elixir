@@ -4,7 +4,7 @@ defmodule Flightex.Users.User do
 
   defstruct @keys
 
-  def build(id, name, email, cpf) when is_bitstring(cpf) do
+  def build(id, name, email, cpf) when byte_size(id) > 1 and is_bitstring(cpf) do
     {:ok,
      %__MODULE__{
        id: id,
