@@ -24,4 +24,6 @@ defmodule Exlivery.Orders.Agent do
       uuid -> {:ok, uuid}
     end
   end
+
+  def get_all(), do: Agent.get(__MODULE__, & &1)
 end
