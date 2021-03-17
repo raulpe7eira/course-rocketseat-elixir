@@ -27,4 +27,7 @@ iex> {:ok, booking_id} = Flightex.create_booking(user_id, %{data_completa: "2021
 
 # gets a booking
 iex> Flightex.get_booking(booking_id)
+
+# generates a report by date time range (creates csv file)
+iex> Flightex.generate_report("2021-03-17T11:00:00.000Z", "2021-03-17T11:00:00.000Z", "report_test.csv")
 ```
