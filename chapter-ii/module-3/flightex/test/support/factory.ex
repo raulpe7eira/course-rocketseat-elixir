@@ -8,7 +8,7 @@ defmodule Flightex.Factory do
     %Booking{
       id: nil,
       id_usuario: "1234",
-      data_completa: "2021-03-17T11:00:00.000Z",
+      data_completa: ~N[2021-03-17 11:00:00.000],
       cidade_origem: "Rio de Janeiro",
       cidade_destino: "São Paulo"
     }

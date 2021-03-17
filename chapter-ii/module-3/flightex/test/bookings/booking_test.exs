@@ -25,5 +25,13 @@ defmodule Flightex.Bookings.BookingTest do
 
       assert response == expected_response
     end
+
+    test "when there are invalid complete date, returns an error", %{user: user} do
+      response = Booking.build(user, "2021-03-17T1100:00.000Z", "Rio de Janeiro", "São Paulo")
+
+      expected_response = {:error, "Invalid date"}
+
+      assert response == expected_response
+    end
   end
 end
