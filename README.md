@@ -8,8 +8,23 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 - [x] [Module 1 - Fundamentals of Elixir](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v1)
 - [x] [Module 2 - Deepening the concepts](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v2)
+
+## Chapter II
+
+- [ ] [Module 3 - Structs and agents](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v3)
+
+## Chapter III
+
+- [ ] ...
+
+## Chapter IV
+
+- [ ] ...
+
+## Chapter V
+
 - [ ] ...
 
 ---
 
-**🚧 WIP**
+**WIP :rotating_light: :construction:**
