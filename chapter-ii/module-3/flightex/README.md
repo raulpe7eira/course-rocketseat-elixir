@@ -1,21 +1,30 @@
 # Flightex
 
-**TODO: Add description**
+This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
-## Installation
+> The project simulates flight bookings.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `flightex` to your list of dependencies in `mix.exs`:
+## Compilation, tests and runs
 
-```elixir
-def deps do
-  [
-    {:flightex, "~> 0.1.0"}
-  ]
-end
+```bash
+$ cd course-rocketseat-elixir/chapter-ii/module-3/flightex
+$ mix compile
+$ mix test
+$ iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/flightex](https://hexdocs.pm/flightex).
+## How to use?
 
+```elixir
+# start agents to simulate a memory database
+iex> Flightex.start_agents()
+
+# creates an user
+iex> {:ok, user_id} = Flightex.create_user(%{name: "Raul", email: "raul@mail.com", cpf: "65977019092"})
+
+# creates a booking
+iex> {:ok, booking_id} = Flightex.create_booking(user_id, %{data_completa: "2021-03-17T11:00:00.000Z", cidade_origem: "Rio de Janeiro", cidade_destino: "São Paulo"})
+
+# gets a booking
+iex> Flightex.get_booking(booking_id)
+```
