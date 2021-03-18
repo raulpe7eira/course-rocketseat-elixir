@@ -6,7 +6,7 @@ defmodule Flightex.Bookings.ReportTest do
   alias Flightex.Bookings.Agent, as: BookingAgent
   alias Flightex.Bookings.Report
 
-  describe "create/1" do
+  describe "call/3" do
     setup do
       BookingAgent.start_link(%{})
 
@@ -105,6 +105,26 @@ defmodule Flightex.Bookings.ReportTest do
       expected_response = {:error, "Report generated with failure"}
 
       assert response == expected_response
+    end
+
+    test "when there is no filename, generates the report file default" do
+      message_response =
+        Report.call(
+          "2021-03-17T11:00:00.000Z",
+          "2021-03-17T11:00:00.000Z"
+        )
+
+      expected_message_response = {:ok, "Report generated successfully"}
+
+      assert message_response == expected_message_response
+
+      content_file_created = File.read!("report.csv")
+
+      expected_content_file_created =
+        "1234,Rio de Janeiro,São Paulo,2021-03-17 11:00:00.000\n" <>
+          "1234,Rio de Janeiro,São Paulo,2021-03-17 11:00:00.000\n"
+
+      assert content_file_created == expected_content_file_created
     end
   end
 end
