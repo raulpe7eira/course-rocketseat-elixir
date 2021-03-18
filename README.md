@@ -27,4 +27,4 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ---
 
-**WIP :rotating_light: :construction:**
+**:construction: WIP :construction:**
