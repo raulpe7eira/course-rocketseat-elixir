@@ -4,12 +4,13 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates the processing of csv files for generating reports.
 
-## Compilation, tests and runs
+## Compilation, tests, coverages and runs
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-i/module-2/reports_hours
 $ mix compile
 $ mix test
+$ mix test --cover
 $ iex -S mix
 ```
 

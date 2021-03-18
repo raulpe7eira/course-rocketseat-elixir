@@ -4,12 +4,13 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates the odd number filter received.
 
-## Compilation, tests and runs
+## Compilation, tests, coverages and runs
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-i/module-1/list_filter
 $ mix compile
 $ mix test
+$ mix test --cover
 $ iex -S mix
 ```
 

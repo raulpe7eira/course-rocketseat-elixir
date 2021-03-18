@@ -4,12 +4,13 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates order requests for delivery and generates a csv report.
 
-## Compilation, tests and runs
+## Compilation, tests, coverages and runs
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-ii/module-3/exlivery
 $ mix compile
 $ mix test
+$ mix test --cover
 $ iex -S mix
 ```
 
