@@ -10,6 +10,11 @@ use Mix.Config
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
+# Configures the repo
+config :rockelivery, Rockelivery.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreing_key: [type: :binary_id]
+
 # Configures the endpoint
 config :rockelivery, RockeliveryWeb.Endpoint,
   url: [host: "localhost"],
