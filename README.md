@@ -11,11 +11,11 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ## Chapter II
 
-- [x] [Module 3 - Structs and agents](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v3)
+- [x] [Module 3 - Structs and Agents](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v3)
 
 ## Chapter III
 
-- [ ] ...
+- [ ] [Module 4 - Phoenix and Ecto](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v4)
 
 ## Chapter IV
 
