@@ -23,8 +23,8 @@ defmodule Rockelivery.User do
     timestamps()
   end
 
-  def changeset(params) do
-    %__MODULE__{}
+  def changeset(user \\ %__MODULE__{}, params) do
+    user
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_number(:age, greater_than_or_equal_to: 18)
