@@ -1,0 +1,6 @@
+{
+	"skip_files": [
+		"test/support",
+		"lib/daily_meals_web/channels/user_socket"
+	]
+}
