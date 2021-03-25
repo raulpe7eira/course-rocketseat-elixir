@@ -7,7 +7,7 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 ## Chapter I
 
 - [x] [Module 1 - Fundamentals of Elixir](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v1)
-- [x] [Module 2 - Deepening the concepts](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v2)
+- [x] [Module 2 - Deepening the Concepts](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v2)
 
 ## Chapter II
 
@@ -15,13 +15,17 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ## Chapter III
 
-- [ ] [Module 4 - Phoenix and Ecto](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v4)
+- [x] [Module 4 - Phoenix and Ecto](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v4)
 
 ## Chapter IV
 
 - [ ] ...
 
 ## Chapter V
+
+- [ ] ...
+
+## Chapter VI
 
 - [ ] ...
 
