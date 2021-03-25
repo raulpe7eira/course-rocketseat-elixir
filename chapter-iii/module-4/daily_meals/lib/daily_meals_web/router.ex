@@ -1,8 +1,11 @@
 defmodule DailyMealsWeb.Router do
   use DailyMealsWeb, :router
 
+  alias DailyMealsWeb.Plugs.UUIDChecker
+
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
   end
 
   scope "/api", DailyMealsWeb do
