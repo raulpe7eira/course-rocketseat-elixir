@@ -2,7 +2,7 @@ defmodule DailyMeals.Meals.Update do
   alias DailyMeals.Meals.Meal
   alias DailyMeals.Repo
 
-  def call(%{"id" => id} = params) do
+  def call(id, params) do
     case Repo.get(Meal, id) do
       nil -> {:error, "Meal not found!"}
       meal -> do_update(meal, params)

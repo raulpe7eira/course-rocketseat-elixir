@@ -49,6 +49,43 @@ defmodule DailyMealsWeb.MealsControllerTest do
     end
   end
 
+  describe "delete/2" do
+    test "when all params are valid, deletes the meal", %{conn: conn} do
+      meal = insert(:meal)
+
+      response =
+        conn
+        |> delete(Routes.meals_path(conn, :delete, meal.id))
+        |> response(:no_content)
+
+      expected_response = ""
+
+      assert response == expected_response
+    end
+
+    test "when thre is no meal with given id, returns an error", %{conn: conn} do
+      response =
+        conn
+        |> delete(Routes.meals_path(conn, :delete, @not_found_id))
+        |> json_response(:bad_request)
+
+      expected_response = %{"detail" => "Meal not found!", "message" => "Falha na requisição!"}
+
+      assert response == expected_response
+    end
+
+    test "when an invalid format id is given, returns an error", %{conn: conn} do
+      response =
+        conn
+        |> delete(Routes.meals_path(conn, :delete, @invalid_id))
+        |> json_response(:bad_request)
+
+      expected_response = %{"detail" => "Invalid id format!", "message" => "Falha na requisição!"}
+
+      assert response == expected_response
+    end
+  end
+
   describe "show/2" do
     test "when all params are valid, show the meal", %{conn: conn} do
       meal = insert(:meal)
@@ -97,7 +134,7 @@ defmodule DailyMealsWeb.MealsControllerTest do
   end
 
   describe "update/2" do
-    test "when all params are valid, update the meal", %{conn: conn} do
+    test "when all params are valid, updates the meal", %{conn: conn} do
       meal = insert(:meal)
 
       response =
