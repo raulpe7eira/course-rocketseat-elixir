@@ -15,7 +15,7 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ## Chapter III
 
-- [ ] [Module 4 - Phoenix and Ecto](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v4)
+- [x] [Module 4 - Phoenix and Ecto](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v4)
 
 ## Chapter IV
 
