@@ -14,16 +14,24 @@ defmodule DailyMealsWeb.MealsController do
     end
   end
 
+  def delete(conn, %{"id" => id}) do
+    with {:ok, %Meal{}} <- DailyMeals.delete_meal(id) do
+      conn
+      |> put_status(:no_content)
+      |> text("")
+    end
+  end
+
   def show(conn, %{"id" => id}) do
-    with {:ok, %Meal{} = meal} <- DailyMeals.retrieve_meal_by_id(id) do
+    with {:ok, %Meal{} = meal} <- DailyMeals.retrieve_meal(id) do
       conn
       |> put_status(:ok)
       |> render("retrieve.json", meal: meal)
     end
   end
 
-  def update(conn, params) do
-    with {:ok, %Meal{} = meal} <- DailyMeals.update_meal(params) do
+  def update(conn, %{"id" => id} = params) do
+    with {:ok, %Meal{} = meal} <- DailyMeals.update_meal(id, params) do
       conn
       |> put_status(:ok)
       |> render("update.json", meal: meal)
