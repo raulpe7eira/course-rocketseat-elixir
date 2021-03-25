@@ -5,24 +5,33 @@ defmodule DailyMeals.Meals.CreateTest do
 
   alias DailyMeals.Meals.{Create, Meal}
 
+  @create_params build(:meal_params)
+  @invalid_params build(:meal_params, descricao: nil, data: nil, calorias: nil)
+
   describe "call/1" do
     test "when all params are valid, returns the meal" do
-      params = build(:meal_params)
+      response = Create.call(@create_params)
 
-      response = Create.call(params)
-
-      assert {:ok, %Meal{id: _id, descricao: "Sopa", data: _data, calorias: 20}} = response
+      assert {:ok,
+              %Meal{
+                id: _id,
+                descricao: "Sopa",
+                data: ~N[2021-03-24 18:00:00],
+                calorias: 20
+              }} = response
     end
 
     test "when there are invalid params, returns an error" do
-      params = build(:meal_params, %{calorias: -1})
+      response = Create.call(@invalid_params)
 
-      response = Create.call(params)
-
-      expected_response = %{calorias: ["must be greater than or equal to 0"]}
+      expected_response = %{
+        descricao: ["can't be blank"],
+        data: ["can't be blank"],
+        calorias: ["can't be blank"]
+      }
 
       assert {:error, changeset} = response
-      assert errors_on(changeset) == expected_response
+      assert expected_response == errors_on(changeset)
     end
   end
 end

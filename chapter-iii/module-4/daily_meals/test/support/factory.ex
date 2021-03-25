@@ -15,7 +15,7 @@ defmodule DailyMeals.Factory do
     %Meal{
       id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
       descricao: "Sopa",
-      data: "2021-03-24T18:00:00Z",
+      data: ~N[2021-03-24 18:00:00],
       calorias: 20
     }
   end

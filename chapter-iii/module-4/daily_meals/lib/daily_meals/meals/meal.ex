@@ -11,14 +11,14 @@ defmodule DailyMeals.Meals.Meal do
 
   schema "meals" do
     field :descricao, :string
-    field :data, :utc_datetime
+    field :data, :naive_datetime
     field :calorias, :integer
 
     timestamps()
   end
 
-  def changeset(params) do
-    %__MODULE__{}
+  def changeset(meal \\ %__MODULE__{}, params) do
+    meal
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_number(:calorias, greater_than_or_equal_to: 0)

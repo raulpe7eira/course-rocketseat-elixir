@@ -11,19 +11,21 @@ defmodule DailyMealsWeb.MealsViewTest do
 
     response = render(MealsView, "create.json", meal: meal)
 
-    assert %{
-             message: "Meal created!",
-             detail: %{
-               meal: %DailyMeals.Meals.Meal{
-                 id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
-                 descricao: "Sopa",
-                 data: "2021-03-24T18:00:00Z",
-                 calorias: 20,
-                 inserted_at: nil,
-                 updated_at: nil
-               }
-             }
-           } == response
+    expected_response = %{
+      message: "Meal created!",
+      detail: %{
+        meal: %DailyMeals.Meals.Meal{
+          id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
+          descricao: "Sopa",
+          data: ~N[2021-03-24 18:00:00],
+          calorias: 20,
+          inserted_at: nil,
+          updated_at: nil
+        }
+      }
+    }
+
+    assert response == expected_response
   end
 
   test "renders retrieve.json" do
@@ -31,18 +33,42 @@ defmodule DailyMealsWeb.MealsViewTest do
 
     response = render(MealsView, "retrieve.json", meal: meal)
 
-    assert %{
-             message: "Meal retrieved!",
-             detail: %{
-               meal: %DailyMeals.Meals.Meal{
-                 id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
-                 descricao: "Sopa",
-                 data: "2021-03-24T18:00:00Z",
-                 calorias: 20,
-                 inserted_at: nil,
-                 updated_at: nil
-               }
-             }
-           } == response
+    expected_response = %{
+      message: "Meal retrieved!",
+      detail: %{
+        meal: %DailyMeals.Meals.Meal{
+          id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
+          descricao: "Sopa",
+          data: ~N[2021-03-24 18:00:00],
+          calorias: 20,
+          inserted_at: nil,
+          updated_at: nil
+        }
+      }
+    }
+
+    assert response == expected_response
+  end
+
+  test "renders update.json" do
+    meal = build(:meal)
+
+    response = render(MealsView, "update.json", meal: meal)
+
+    expected_response = %{
+      message: "Meal updated!",
+      detail: %{
+        meal: %DailyMeals.Meals.Meal{
+          id: "27d34263-6b3f-4236-a2a1-3949c3804b93",
+          descricao: "Sopa",
+          data: ~N[2021-03-24 18:00:00],
+          calorias: 20,
+          inserted_at: nil,
+          updated_at: nil
+        }
+      }
+    }
+
+    assert response == expected_response
   end
 end
