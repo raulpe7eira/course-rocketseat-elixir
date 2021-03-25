@@ -21,4 +21,12 @@ defmodule DailyMealsWeb.MealsController do
       |> render("retrieve.json", meal: meal)
     end
   end
+
+  def update(conn, params) do
+    with {:ok, %Meal{} = meal} <- DailyMeals.update_meal(params) do
+      conn
+      |> put_status(:ok)
+      |> render("update.json", meal: meal)
+    end
+  end
 end
