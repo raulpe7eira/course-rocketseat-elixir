@@ -3,16 +3,21 @@ defmodule DailyMeals.Meals.Meal do
 
   import Ecto.Changeset
 
+  alias DailyMeals.Users.User
+
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @required_params [:descricao, :data, :calorias]
 
-  @derive {Jason.Encoder, only: [:id, :descricao, :data, :calorias]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
   schema "meals" do
     field :descricao, :string
     field :data, :naive_datetime
     field :calorias, :integer
+
+    belongs_to :user, User
 
     timestamps()
   end
