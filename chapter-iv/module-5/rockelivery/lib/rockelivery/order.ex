@@ -10,7 +10,7 @@ defmodule Rockelivery.Order do
 
   @required_params [:address, :comments, :payment_method, :user_id]
 
-  @derive {Jason.Encoder, only: @required_params ++ [:id]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id, :items]}
 
   @payment_methods [:money, :credit_card, :debit_card]
 
@@ -19,9 +19,9 @@ defmodule Rockelivery.Order do
     field :comments, :string
     field :payment_method, Enum, values: @payment_methods
 
-    belongs_to :users, User
+    belongs_to :user, User
 
-    many_to_many :tems, Item, join_through: "orders_items"
+    many_to_many :items, Item, join_through: "orders_items"
 
     timestamps()
   end
