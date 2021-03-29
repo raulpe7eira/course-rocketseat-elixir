@@ -5,7 +5,6 @@ defmodule Rockelivery.User do
   alias Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
-
   @required_params [:age, :address, :cep, :cpf, :email, :password, :name]
 
   @derive {Jason.Encoder, only: [:id, :age, :address, :cep, :cpf, :email, :name]}
