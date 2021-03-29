@@ -50,4 +50,34 @@ curl -X PUT 'http://localhost:4000/api/users/{id}' \
 
 # deletes user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
 curl -X DELETE 'http://localhost:4000/api/users/{id}'
+
+# creates item
+curl -X POST 'http://localhost:4000/api/items' \
+-H 'Content-Type: application/json' \
+-d '{
+    "category": "food",
+    "description": "Arroz & feijão",
+    "price": "10.00",
+    "photo": "/priv/photos/arroz_feijao.jpg"
+}'
+
+# creates order (note: replace {user_id} and {item_id} with the respective id)
+curl -X POST 'http://localhost:4000/api/orders' \
+-H 'Content-Type: application/json' \
+-d '{
+    "address": "Rua X, 123",
+    "comments": "Com bacon",
+    "payment_method": "credit_card",
+    "user_id": "{user_id}",
+    "items": [
+        {
+            "id": "{item_id}",
+            "quantity": 2
+        },
+        {
+            "id": "{item_id}",
+            "quantity": 3
+        }
+    ]
+}'
 ```
