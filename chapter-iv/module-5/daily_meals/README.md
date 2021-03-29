@@ -25,13 +25,23 @@ $ mix phx.server
 ## How to use?
 
 ```bash
-# creates meal
+# creates user
+curl -X POST 'http://localhost:4000/api/users' \
+-H 'Content-Type: application/json' \
+-d '{
+    "nome": "Raul",
+    "cpf": "20445478055",
+    "email": "raul@mail.com"
+}'
+
+# creates meal (note: replace {user_id} with the respective id)
 curl -X POST 'http://localhost:4000/api/meals' \
 -H 'Content-Type: application/json' \
 -d '{
     "descricao": "Sopa",
     "data": "2021-03-24T18:00:00Z",
-    "calorias": 20
+    "calorias": 20,
+    "user_id": "{user_id}
 }'
 
 # retrieves meal by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
