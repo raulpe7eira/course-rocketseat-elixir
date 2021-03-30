@@ -6,6 +6,7 @@ defmodule DailyMeals.Users.User do
   alias DailyMeals.Meals.Meal
 
   @primary_key {:id, :binary_id, autogenerate: true}
+
   @required_params [:nome, :cpf, :email]
 
   @derive {Jason.Encoder, only: @required_params ++ [:id]}
