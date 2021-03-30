@@ -34,6 +34,20 @@ curl -X POST 'http://localhost:4000/api/users' \
     "email": "raul@mail.com"
 }'
 
+# retrieves user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+curl -X GET 'http://localhost:4000/api/users/{id}'
+
+# updates user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+curl -X PUT 'http://localhost:4000/api/users/{id}' \
+-H 'Content-Type: application/json' \
+-d '{
+    "cpf": "47026165011",
+    "email": "fulano@mail.com"
+}'
+
+# deletes user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+curl -X DELETE 'http://localhost:4000/api/users/{id}'
+
 # creates meal (note: replace {user_id} with the respective id)
 curl -X POST 'http://localhost:4000/api/meals' \
 -H 'Content-Type: application/json' \
