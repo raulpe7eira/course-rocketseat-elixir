@@ -9,7 +9,7 @@ defmodule DailyMeals do
   alias DailyMeals.Users.Retrieve, as: RetrieveUser
   alias DailyMeals.Users.Update, as: UpdateUser
 
-  defdelegate create_meal(params), to: CreateMeal, as: :call
+  defdelegate create_meal(user_id, params), to: CreateMeal, as: :call
   defdelegate delete_meal(id), to: DeleteMeal, as: :call
   defdelegate retrieve_meal(id), to: RetrieveMeal, as: :call
   defdelegate update_meal(id, params), to: UpdateMeal, as: :call

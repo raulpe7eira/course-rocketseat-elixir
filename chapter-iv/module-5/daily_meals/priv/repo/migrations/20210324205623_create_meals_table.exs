@@ -3,9 +3,9 @@ defmodule DailyMeals.Repo.Migrations.CreateMealsTable do
 
   def change do
     create table :meals do
-      add :descricao, :string
-      add :data, :naive_datetime
-      add :calorias, :integer
+      add :descricao, :string, null: false
+      add :data, :naive_datetime, null: false
+      add :calorias, :integer, null: false
 
       timestamps()
     end

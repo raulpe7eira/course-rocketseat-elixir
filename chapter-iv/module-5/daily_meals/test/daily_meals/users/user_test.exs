@@ -10,7 +10,7 @@ defmodule DailyMeals.Users.UserTest do
   @update_params build(:user_params, nome: "Fulano", cpf: "47026165011", email: "fulano@mail.com")
   @invalid_params build(:user_params, nome: nil, cpf: nil, email: nil)
 
-  describe "changeset/2" do
+  describe "changeset/3" do
     test "when all params are valid, returns a valid changeset" do
       response = User.changeset(@create_params)
 

@@ -102,7 +102,8 @@ defmodule DailyMealsWeb.UsersControllerTest do
             "id" => "d336107e-57bb-482e-9a30-944ef7ba2d53",
             "nome" => "Raul",
             "cpf" => "20445478055",
-            "email" => "raul@mail.com"
+            "email" => "raul@mail.com",
+            "meals" => []
           }
         }
       }
@@ -149,7 +150,8 @@ defmodule DailyMealsWeb.UsersControllerTest do
             "id" => "d336107e-57bb-482e-9a30-944ef7ba2d53",
             "nome" => "Fulano",
             "cpf" => "47026165011",
-            "email" => "fulano@mail.com"
+            "email" => "fulano@mail.com",
+            "meals" => []
           }
         }
       }

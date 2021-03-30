@@ -9,7 +9,7 @@ defmodule DailyMeals.Users.User do
 
   @required_params [:nome, :cpf, :email]
 
-  @derive {Jason.Encoder, only: @required_params ++ [:id]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id, :meals]}
 
   schema "users" do
     field :nome, :string
@@ -21,7 +21,7 @@ defmodule DailyMeals.Users.User do
     timestamps()
   end
 
-  def changeset(user \\ %__MODULE__{}, params) do
+  def changeset(user \\ %__MODULE__{}, params, meals \\ []) do
     user
     |> cast(params, @required_params)
     |> validate_required(@required_params)
@@ -29,5 +29,6 @@ defmodule DailyMeals.Users.User do
     |> validate_format(:email, ~r/@/)
     |> unique_constraint([:cpf])
     |> unique_constraint([:email])
+    |> put_assoc(:meals, meals)
   end
 end

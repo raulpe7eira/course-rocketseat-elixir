@@ -3,7 +3,7 @@ defmodule DailyMeals.Repo.Migrations.AlterMealsTable do
 
   def change do
     alter table :meals do
-      add :user_id, references(:users, type: :binary_id)
+      add :user_id, references(:users, type: :binary_id), null: false
     end
   end
 end

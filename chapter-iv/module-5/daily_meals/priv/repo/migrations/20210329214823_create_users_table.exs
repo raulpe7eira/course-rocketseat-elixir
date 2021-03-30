@@ -3,9 +3,9 @@ defmodule DailyMeals.Repo.Migrations.CreateUsersTable do
 
   def change do
     create table :users do
-      add :nome, :string
-      add :cpf, :string
-      add :email, :string
+      add :nome, :string, null: false
+      add :cpf, :string, null: false
+      add :email, :string, null: false
 
       timestamps()
     end

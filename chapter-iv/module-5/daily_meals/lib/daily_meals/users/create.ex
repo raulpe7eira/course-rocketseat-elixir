@@ -1,6 +1,6 @@
 defmodule DailyMeals.Users.Create do
-  alias DailyMeals.Users.User
   alias DailyMeals.Repo
+  alias DailyMeals.Users.User
 
   def call(params) do
     params

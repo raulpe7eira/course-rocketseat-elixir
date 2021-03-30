@@ -12,6 +12,8 @@ defmodule DailyMealsWeb.MealsControllerTest do
 
   describe "create/2" do
     test "when all params are valid, creates the meal", %{conn: conn} do
+      insert(:user)
+
       response =
         conn
         |> post(Routes.meals_path(conn, :create), @create_params)
@@ -31,6 +33,8 @@ defmodule DailyMealsWeb.MealsControllerTest do
     end
 
     test "when there are some error, returns an error", %{conn: conn} do
+      insert(:user)
+
       response =
         conn
         |> post(Routes.meals_path(conn, :create), @invalid_params)
@@ -102,7 +106,8 @@ defmodule DailyMealsWeb.MealsControllerTest do
             "id" => "27d34263-6b3f-4236-a2a1-3949c3804b93",
             "descricao" => "Sopa",
             "data" => "2021-03-24T18:00:00",
-            "calorias" => 20
+            "calorias" => 20,
+            "user_id" => "d336107e-57bb-482e-9a30-944ef7ba2d53"
           }
         }
       }
@@ -149,7 +154,8 @@ defmodule DailyMealsWeb.MealsControllerTest do
             "id" => "27d34263-6b3f-4236-a2a1-3949c3804b93",
             "descricao" => "Ovo",
             "data" => "2021-03-24T17:00:00",
-            "calorias" => 1
+            "calorias" => 1,
+            "user_id" => "d336107e-57bb-482e-9a30-944ef7ba2d53"
           }
         }
       }

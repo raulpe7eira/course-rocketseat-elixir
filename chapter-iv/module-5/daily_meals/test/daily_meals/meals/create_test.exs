@@ -8,9 +8,11 @@ defmodule DailyMeals.Meals.CreateTest do
   @create_params build(:meal_params)
   @invalid_params build(:meal_params, descricao: nil, data: nil, calorias: nil)
 
-  describe "call/1" do
+  describe "call/2" do
     test "when all params are valid, returns the meal" do
-      response = Create.call(@create_params)
+      user = insert(:user)
+
+      response = Create.call(user.id, @create_params)
 
       assert {:ok,
               %Meal{
@@ -22,7 +24,9 @@ defmodule DailyMeals.Meals.CreateTest do
     end
 
     test "when there are invalid params, returns an error" do
-      response = Create.call(@invalid_params)
+      user = insert(:user)
+
+      response = Create.call(user.id, @invalid_params)
 
       expected_response = %{
         descricao: ["can't be blank"],

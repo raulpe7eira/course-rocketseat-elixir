@@ -3,7 +3,7 @@ defmodule DailyMeals.Meals.Update do
   alias DailyMeals.Repo
 
   def call(id, params) do
-    case Repo.get(Meal, id) do
+    case Repo.get(Meal, id) |> Repo.preload(:user) do
       nil -> {:error, "Meal not found!"}
       meal -> do_update(meal, params)
     end
@@ -11,7 +11,7 @@ defmodule DailyMeals.Meals.Update do
 
   defp do_update(meal, params) do
     meal
-    |> Meal.changeset(params)
+    |> Meal.changeset(params, meal.user)
     |> Repo.update()
     |> handle_update()
   end

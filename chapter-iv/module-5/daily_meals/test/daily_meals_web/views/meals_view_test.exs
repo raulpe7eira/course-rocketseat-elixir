@@ -19,6 +19,7 @@ defmodule DailyMealsWeb.MealsViewTest do
           descricao: "Sopa",
           data: ~N[2021-03-24 18:00:00],
           calorias: 20,
+          user_id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
           user: %DailyMeals.Users.User{
             id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
             nome: "Raul",
@@ -47,6 +48,7 @@ defmodule DailyMealsWeb.MealsViewTest do
           descricao: "Sopa",
           data: ~N[2021-03-24 18:00:00],
           calorias: 20,
+          user_id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
           user: %DailyMeals.Users.User{
             id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
             nome: "Raul",
@@ -75,6 +77,7 @@ defmodule DailyMealsWeb.MealsViewTest do
           descricao: "Sopa",
           data: ~N[2021-03-24 18:00:00],
           calorias: 20,
+          user_id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
           user: %DailyMeals.Users.User{
             id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
             nome: "Raul",

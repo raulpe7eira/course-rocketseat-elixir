@@ -6,13 +6,15 @@ defmodule DailyMeals.Meals.MealTest do
   alias DailyMeals.Meals.Meal
   alias Ecto.Changeset
 
+  @user build(:user)
+
   @create_params build(:meal_params)
   @update_params build(:meal_params, descricao: "Ovo", data: ~N[2021-03-24 17:00:00], calorias: 1)
   @invalid_params build(:meal_params, descricao: nil, data: nil, calorias: nil)
 
-  describe "changeset/2" do
+  describe "changeset/3" do
     test "when all params are valid, returns a valid changeset" do
-      response = Meal.changeset(@create_params)
+      response = Meal.changeset(@create_params, @user)
 
       assert %Changeset{
                changes: %{
@@ -27,7 +29,7 @@ defmodule DailyMeals.Meals.MealTest do
     end
 
     test "when there are some error, returns an invalid changeset" do
-      response = Meal.changeset(@invalid_params)
+      response = Meal.changeset(@invalid_params, @user)
 
       expected_response = %{
         descricao: ["can't be blank"],
@@ -41,8 +43,8 @@ defmodule DailyMeals.Meals.MealTest do
     test "when updating a changeset, returns a valid changeset with the given changes" do
       response =
         @create_params
-        |> Meal.changeset()
-        |> Meal.changeset(@update_params)
+        |> Meal.changeset(@user)
+        |> Meal.changeset(@update_params, @user)
 
       assert %Changeset{
                changes: %{

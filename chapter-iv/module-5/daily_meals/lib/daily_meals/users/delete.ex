@@ -1,6 +1,6 @@
 defmodule DailyMeals.Users.Delete do
-  alias DailyMeals.Users.User
   alias DailyMeals.Repo
+  alias DailyMeals.Users.User
 
   def call(id) do
     case Repo.get(User, id) do

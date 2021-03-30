@@ -8,9 +8,10 @@ defmodule DailyMealsTest do
 
   describe "meal" do
     test "creates" do
+      user = insert(:user)
       params = build(:meal_params)
 
-      response = DailyMeals.create_meal(params)
+      response = DailyMeals.create_meal(user.id, params)
 
       assert {:ok,
               %Meal{
