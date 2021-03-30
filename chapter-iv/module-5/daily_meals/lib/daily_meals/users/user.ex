@@ -8,7 +8,7 @@ defmodule DailyMeals.Users.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:nome, :cpf, :email]
 
-  @derive {Jason.Encoder, only: @required_params ++ [:id, :meals]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
   schema "users" do
     field :nome, :string
