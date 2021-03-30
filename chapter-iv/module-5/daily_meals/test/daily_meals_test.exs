@@ -89,5 +89,54 @@ defmodule DailyMealsTest do
                 updated_at: _updated_at
               }} = response
     end
+
+    test "deletes" do
+      user = insert(:user)
+
+      response = DailyMeals.delete_user(user.id)
+
+      assert {:ok,
+              %User{
+                id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
+                nome: "Raul",
+                cpf: "20445478055",
+                email: "raul@mail.com",
+                inserted_at: _inserted_at,
+                updated_at: _updated_at
+              }} = response
+    end
+
+    test "retrieves" do
+      user = insert(:user)
+
+      response = DailyMeals.retrieve_user(user.id)
+
+      assert {:ok,
+              %User{
+                id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
+                nome: "Raul",
+                cpf: "20445478055",
+                email: "raul@mail.com",
+                inserted_at: _inserted_at,
+                updated_at: _updated_at
+              }} = response
+    end
+
+    test "updates" do
+      user = insert(:user)
+      params = build(:user_params, nome: "Fulano", cpf: "47026165011", email: "fulano@mail.com")
+
+      response = DailyMeals.update_user(user.id, params)
+
+      assert {:ok,
+              %User{
+                id: "d336107e-57bb-482e-9a30-944ef7ba2d53",
+                nome: "Fulano",
+                cpf: "47026165011",
+                email: "fulano@mail.com",
+                inserted_at: _inserted_at,
+                updated_at: _updated_at
+              }} = response
+    end
   end
 end
