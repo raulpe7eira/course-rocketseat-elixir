@@ -1,18 +1,22 @@
 # Codex
 
-To start your Phoenix server:
+This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phx.server`
+> The project simulates a repositories client.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Gets dependencies, tests, coverages and starts application
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```bash
+$ cd course-rocketseat-elixir/chapter-iv/module-6/codex
+$ mix deps.get
+$ mix test
+$ mix test --cover
+$ mix phx.server
+```
 
-## Learn more
+## How to use?
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```bash
+# retrieves github repos by user login (i.e.: {login} = raulpe7eira)
+curl -X GET 'http://localhost:4000/api/repos/github/users/{login}'
+```
