@@ -7,6 +7,9 @@
 # General application configuration
 use Mix.Config
 
+# Configures the github client
+config :codex, Codex.Repos.Retrieve, github_adapter: Codex.Github.Client
+
 # Configures the endpoint
 config :codex, CodexWeb.Endpoint,
   url: [host: "localhost"],
