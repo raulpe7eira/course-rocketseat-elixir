@@ -13,7 +13,7 @@ Database, we recommends install [PostgreSQL](https://www.postgresql.org/) with [
 ## Gets dependencies, setups database, tests, coverages and starts application
 
 ```bash
-$ cd course-rocketseat-elixir/chapter-iii/module-4/rockelivery
+$ cd course-rocketseat-elixir/chapter-iv/module-5/rockelivery
 $ mix deps.get
 $ mix ecto.setup
 $ mix test
