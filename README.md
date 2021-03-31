@@ -20,7 +20,7 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 ## Chapter IV
 
 - [x] [Module 5 - Ecto Association](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v5)
-- [ ] [Module 6 - Consuming External API](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v6)
+- [x] [Module 6 - Consuming External API](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v6)
 
 ## Chapter V
 
