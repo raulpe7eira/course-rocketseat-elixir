@@ -1,5 +1,5 @@
 defmodule Codex do
-  alias Codex.Github.Client, as: ClientGitHub
+  alias Codex.Repos.Retrieve, as: RetrieveRepos
 
-  defdelegate retrieve_github_user_repos(login), to: ClientGitHub, as: :user_repos
+  defdelegate retrieve_github_user_repos(login), to: RetrieveRepos, as: :github_call
 end

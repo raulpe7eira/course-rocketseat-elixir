@@ -8,7 +8,7 @@ defmodule CodexWeb.Router do
   scope "/api", CodexWeb do
     pipe_through :api
 
-    get "/repos/github/users/:login", ReposController, :show
+    resources "/repos/github/users", ReposController, only: [:show]
   end
 
   # Enables LiveDashboard only for development

@@ -23,7 +23,7 @@ defmodule Codex.Github.Client do
   end
 
   defp handle_get({:ok, %Env{status: 404, body: %{"message" => "Not Found"}}}) do
-    {:error, Error.build(:not_found, "User not found!")}
+    {:error, Error.build(:not_found, "Login not found!")}
   end
 
   defp handle_get({:ok, %Env{status: 200, body: repos}}) do
