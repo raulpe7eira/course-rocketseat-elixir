@@ -8,11 +8,11 @@ defmodule DailyMeals.Meals.CreateTest do
   @create_params build(:meal_params)
   @invalid_params build(:meal_params, descricao: nil, data: nil, calorias: nil)
 
-  describe "call/2" do
+  describe "call/1" do
     test "when all params are valid, returns the meal" do
-      user = insert(:user)
+      insert(:user)
 
-      response = Create.call(user.id, @create_params)
+      response = Create.call(@create_params)
 
       assert {:ok,
               %Meal{
@@ -23,10 +23,18 @@ defmodule DailyMeals.Meals.CreateTest do
               }} = response
     end
 
-    test "when there are invalid params, returns an error" do
-      user = insert(:user)
+    test "when there is user not found, returns an error" do
+      response = Create.call(@create_params)
 
-      response = Create.call(user.id, @invalid_params)
+      expected_response = {:error, "User not found!"}
+
+      assert response == expected_response
+    end
+
+    test "when there are invalid params, returns an error" do
+      insert(:user)
+
+      response = Create.call(@invalid_params)
 
       expected_response = %{
         descricao: ["can't be blank"],

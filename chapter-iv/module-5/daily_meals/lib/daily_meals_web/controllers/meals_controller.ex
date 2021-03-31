@@ -6,8 +6,8 @@ defmodule DailyMealsWeb.MealsController do
 
   action_fallback FallbackController
 
-  def create(conn, %{"user_id" => user_id} = params) do
-    with {:ok, %Meal{} = meal} <- DailyMeals.create_meal(user_id, params) do
+  def create(conn, params) do
+    with {:ok, %Meal{} = meal} <- DailyMeals.create_meal(params) do
       conn
       |> put_status(:created)
       |> render("create.json", meal: meal)
