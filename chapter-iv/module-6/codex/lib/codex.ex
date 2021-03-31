@@ -1,9 +1,5 @@
 defmodule Codex do
-  @moduledoc """
-  Codex keeps the contexts that define your domain
-  and business logic.
+  alias Codex.Github.Client, as: ClientGitHub
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  defdelegate retrieve_github_user_repos(login), to: ClientGitHub, as: :user_repos
 end
