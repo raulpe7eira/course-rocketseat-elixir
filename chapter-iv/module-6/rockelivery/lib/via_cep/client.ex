@@ -25,5 +25,5 @@ defmodule Rockelivery.ViaCep.Client do
     {:error, Error.build(:bad_request, "Invalid CEP!")}
   end
 
-  defp handle_get({:ok, %Env{status: 200, body: body}}), do: {:ok, body}
+  defp handle_get({:ok, %Env{status: 200, body: cep_info}}), do: {:ok, cep_info}
 end
