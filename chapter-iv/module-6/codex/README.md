@@ -4,13 +4,14 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates a repositories client.
 
-## Gets dependencies, tests, coverages and starts application
+## Gets dependencies, tests, coverages, reports and starts application
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-iv/module-6/codex
 $ mix deps.get
 $ mix test
 $ mix test --cover
+$ mix coveralls.html
 $ mix phx.server
 ```
 
