@@ -1,5 +1,8 @@
 use Mix.Config
 
+# Configures the via cep client
+config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.ClientMock
+
 # Configure your database
 #
 # The MIX_TEST_PARTITION environment variable can be used

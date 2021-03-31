@@ -10,6 +10,9 @@ use Mix.Config
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
+# Configures the via cep client
+config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.Client
+
 # Configures the repo
 config :rockelivery, Rockelivery.Repo,
   migration_primary_key: [type: :binary_id],
