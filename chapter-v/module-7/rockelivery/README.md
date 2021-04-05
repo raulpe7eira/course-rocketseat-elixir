@@ -72,7 +72,7 @@ curl -X PUT 'http://localhost:4000/api/users/{id}' \
 #     {token} : authorization token
 # )
 curl -X DELETE 'http://localhost:4000/api/users/{id}'
--H 'Authorization: {token}' \
+-H 'Authorization: {token}'
 
 # creates item (
 #   replaces curly braces:
