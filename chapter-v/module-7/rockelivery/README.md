@@ -13,7 +13,7 @@ Database, we recommends install [PostgreSQL](https://www.postgresql.org/) with [
 ## Gets dependencies, setups database, tests, coverages and starts application
 
 ```bash
-$ cd course-rocketseat-elixir/chapter-iv/module-6/rockelivery
+$ cd course-rocketseat-elixir/chapter-v/module-7/rockelivery
 $ mix deps.get
 $ mix ecto.setup
 $ mix test
@@ -37,22 +37,49 @@ curl -X POST 'http://localhost:4000/api/users' \
     "name": "Raul"
 }'
 
-# retrieves user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
-curl -X GET 'http://localhost:4000/api/users/{id}'
+# signs in user
+curl -X POST 'http://localhost:4000/api/users/sign-in' \
+-H 'Content-Type: application/json' \
+-d '{
+    "id": "bca12dd5-0c6b-4fd3-bf1c-100394bf1725",
+    "password": "111111"
+}'
 
-# updates user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# retrieves user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+#     {token} : authorization token
+# )
+curl -X GET 'http://localhost:4000/api/users/{id}' \
+-H 'Authorization: {token}'
+
+# updates user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+#     {token} : authorization token
+# )
 curl -X PUT 'http://localhost:4000/api/users/{id}' \
+-H 'Authorization: {token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "age": 30,
     "password": "aaaaaa"
 }'
 
-# deletes user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# deletes user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+#     {token} : authorization token
+# )
 curl -X DELETE 'http://localhost:4000/api/users/{id}'
+-H 'Authorization: {token}' \
 
-# creates item
+# creates item (
+#   replaces curly braces:
+#     {token} : authorization token
+# )
 curl -X POST 'http://localhost:4000/api/items' \
+-H 'Authorization: {token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "category": "food",
@@ -61,8 +88,14 @@ curl -X POST 'http://localhost:4000/api/items' \
     "photo": "/priv/photos/arroz_feijao.jpg"
 }'
 
-# creates order (note: replace {user_id} and {item_id} with the respective id)
+# creates order (
+#   replaces curly braces:
+#     {token} : authorization token
+#     {user_id} : user identifier
+#     {item_id} : item identifier
+# )
 curl -X POST 'http://localhost:4000/api/orders' \
+-H 'Authorization: {token}' \
 -H 'Content-Type: application/json' \
 -d '{
     "address": "Rua X, 123",
