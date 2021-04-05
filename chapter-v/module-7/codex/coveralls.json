@@ -1,0 +1,16 @@
+{
+	"skip_files": [
+		"deps/",
+		"lib/codex/application.ex",
+		"lib/codex/error.ex",
+		"lib/codex_web/channels/user_socket.ex",
+		"lib/codex_web/views/error_helpers.ex",
+		"lib/codex_web/endpoint.ex",
+		"lib/codex_web/gettext.ex",
+		"lib/codex_web/router.ex",
+		"lib/codex_web/telemetry.ex",
+		"lib/codex_web.ex",
+		"lib/codex.ex",
+		"test/"
+	]
+}
