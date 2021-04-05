@@ -18,6 +18,11 @@ config :rockelivery, Rockelivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreing_key: [type: :binary_id]
 
+# Configures the guardian
+config :rockelivery, RockeliveryWeb.Auth.Guardian,
+  issuer: "rockelivery",
+  secret_key: "fTXX784MkDow0caCZ5lu5FZKdXNwsi77mulmSokfuM7LELm2WZv5DqnE8kd2ytWx"
+
 # Configures the endpoint
 config :rockelivery, RockeliveryWeb.Endpoint,
   url: [host: "localhost"],
