@@ -5,7 +5,9 @@ defmodule CodexWeb.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :auth do
+  pipeline :api_auth do
+    plug :accepts, ["json"]
+
     plug CodexWeb.Auth.Pipeline
   end
 
@@ -14,10 +16,8 @@ defmodule CodexWeb.Router do
 
     resources "/users", UsersController, only: [:create]
     post "/users/login", UsersController, :login
-  end
 
-  scope "/api", CodexWeb do
-    pipe_through [:api, :auth]
+    pipe_through :api_auth
 
     resources "/repos/github/users", ReposController, only: [:show]
   end
