@@ -8,6 +8,7 @@
 		"lib/codex_web/auth/error_handler.ex",
 		"lib/codex_web/auth/pipeline.ex",
 		"lib/codex_web/channels/user_socket.ex",
+		"lib/codex_web/plugs/token_refresher.ex",
 		"lib/codex_web/views/error_helpers.ex",
 		"lib/codex_web/endpoint.ex",
 		"lib/codex_web/gettext.ex",

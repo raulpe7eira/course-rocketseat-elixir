@@ -25,12 +25,16 @@ defmodule Codex.ReposControllerTest do
         {:ok, build_list(1, :repo)}
       end)
 
-      response =
+      conn =
         conn
         |> get(Routes.repos_path(conn, :show, @login))
+
+      response =
+        conn
         |> json_response(:ok)
 
       expected_response = %{
+        "new_token" => conn.private[:refresh_token],
         "repos" => [
           %{
             "id" => 161_263_070,

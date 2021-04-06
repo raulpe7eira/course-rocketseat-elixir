@@ -8,11 +8,14 @@ defmodule CodexWeb.ReposViewTest do
   alias CodexWeb.ReposView
 
   test "renders retrieve.json" do
+    new_token = "new-token"
+
     repos = build_list(1, :repo)
 
-    response = render(ReposView, "retrieve.json", repos: repos)
+    response = render(ReposView, "retrieve.json", new_token: new_token, repos: repos)
 
     expected_response = %{
+      new_token: new_token,
       repos: [
         %Response{
           id: 161_263_070,
