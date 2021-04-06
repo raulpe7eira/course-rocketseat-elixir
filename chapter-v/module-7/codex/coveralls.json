@@ -2,6 +2,7 @@
 	"skip_files": [
 		"deps/",
 		"lib/codex/application.ex",
+		"lib/codex/repo.ex",
 		"lib/codex/error.ex",
 		"lib/codex_web/channels/user_socket.ex",
 		"lib/codex_web/views/error_helpers.ex",

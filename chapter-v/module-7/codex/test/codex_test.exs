@@ -1,9 +1,10 @@
 defmodule CodexTest do
-  use ExUnit.Case, async: true
+  use Codex.DataCase, async: true
 
   import Mox
   import Codex.Factory
 
+  alias Codex.Users.User
   alias Codex.Github.ClientMock
 
   @login "raulpe7eira"
@@ -27,6 +28,21 @@ defmodule CodexTest do
          ]}
 
       assert response == expected_response
+    end
+  end
+
+  describe "user" do
+    test "creates" do
+      params = build(:user_params)
+
+      response = Codex.create_user(params)
+
+      assert {:ok,
+              %User{
+                id: _id,
+                inserted_at: _inserted_at,
+                updated_at: _updated_at
+              }} = response
     end
   end
 end
