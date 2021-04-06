@@ -19,7 +19,7 @@ defmodule CodexWeb.UsersController do
     with {:ok, token} <- Guardian.authenticate(params) do
       conn
       |> put_status(:ok)
-      |> render("login.json", token: token)
+      |> render("token.json", token: token)
     end
   end
 end

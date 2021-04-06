@@ -10,6 +10,8 @@ defmodule CodexWeb.UsersControllerTest do
   @wrong_id build(:login_params, id: "aa614eb5-c662-454d-8239-1de0aa55b684")
   @wrong_password build(:login_params, password: "654321")
 
+  @no_params %{}
+
   describe "create/2" do
     test "when all params are valid, creates the user", %{conn: conn} do
       response =
@@ -51,8 +53,6 @@ defmodule CodexWeb.UsersControllerTest do
     end
 
     test "when an wrong id given, returns an error", %{conn: conn} do
-      insert(:user)
-
       response =
         conn
         |> post(Routes.users_path(conn, :login), @wrong_id)
@@ -77,6 +77,20 @@ defmodule CodexWeb.UsersControllerTest do
       expected_response = %{
         "message" => "Falha na requisição!",
         "detail" => "Please verify your credentials!"
+      }
+
+      assert response == expected_response
+    end
+
+    test "when no params are given, returns an error", %{conn: conn} do
+      response =
+        conn
+        |> post(Routes.users_path(conn, :login), @no_params)
+        |> json_response(:bad_request)
+
+      expected_response = %{
+        "message" => "Falha na requisição!",
+        "detail" => "Invalid or missing params!"
       }
 
       assert response == expected_response

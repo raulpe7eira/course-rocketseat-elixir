@@ -29,10 +29,10 @@ defmodule CodexWeb.UsersViewTest do
     assert response == expected_response
   end
 
-  test "renders login.json" do
+  test "renders token.json" do
     token = "valid-token"
 
-    response = render(UsersView, "login.json", token: token)
+    response = render(UsersView, "token.json", token: token)
 
     expected_response = %{token: token}
 

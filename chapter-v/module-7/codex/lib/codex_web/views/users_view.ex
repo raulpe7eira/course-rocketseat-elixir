@@ -7,5 +7,5 @@ defmodule CodexWeb.UsersView do
     %{message: "User created!", detail: %{user: user}}
   end
 
-  def render("login.json", %{token: token}), do: %{token: token}
+  def render("token.json", %{token: token}), do: %{token: token}
 end
