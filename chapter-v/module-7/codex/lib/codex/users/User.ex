@@ -7,6 +7,7 @@ defmodule Codex.Users.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:password]
+  @derive {Inspect, except: [:password, :password_hash]}
   @derive {Jason.Encoder, only: [:id]}
 
   schema "users" do

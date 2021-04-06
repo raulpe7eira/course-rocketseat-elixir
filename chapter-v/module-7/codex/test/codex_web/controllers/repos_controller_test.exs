@@ -55,7 +55,7 @@ defmodule Codex.ReposControllerTest do
         |> get(Routes.repos_path(conn, :show, @not_found_login))
         |> json_response(:not_found)
 
-      expected_response = %{"detail" => "Login not found!", "message" => "Falha na requisição!"}
+      expected_response = %{"message" => "Falha na requisição!", "detail" => "Login not found!"}
 
       assert response == expected_response
     end
