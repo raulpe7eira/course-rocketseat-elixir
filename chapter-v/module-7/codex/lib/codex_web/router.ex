@@ -5,12 +5,21 @@ defmodule CodexWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug CodexWeb.Auth.Pipeline
+  end
+
   scope "/api", CodexWeb do
     pipe_through :api
 
-    resources "/repos/github/users", ReposController, only: [:show]
-
     resources "/users", UsersController, only: [:create]
+    post "/users/login", UsersController, :login
+  end
+
+  scope "/api", CodexWeb do
+    pipe_through [:api, :auth]
+
+    resources "/repos/github/users", ReposController, only: [:show]
   end
 
   # Enables LiveDashboard only for development
