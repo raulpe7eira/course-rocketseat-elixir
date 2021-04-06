@@ -30,6 +30,13 @@ defmodule CodexWeb.Telemetry do
         unit: {:native, :millisecond}
       ),
 
+      # Database Metrics
+      summary("codex.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("codex.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("codex.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("codex.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("codex.repo.query.idle_time", unit: {:native, :millisecond}),
+
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
       summary("vm.total_run_queue_lengths.total"),

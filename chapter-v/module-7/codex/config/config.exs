@@ -7,8 +7,16 @@
 # General application configuration
 use Mix.Config
 
+config :codex,
+  ecto_repos: [Codex.Repo]
+
 # Configures the github client
 config :codex, Codex.Repos.Retrieve, github_adapter: Codex.Github.Client
+
+# Configures the repo
+config :codex, Codex.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreing_key: [type: :binary_id]
 
 # Configures the endpoint
 config :codex, CodexWeb.Endpoint,
