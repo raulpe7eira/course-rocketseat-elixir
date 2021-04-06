@@ -1,5 +1,5 @@
 defmodule Codex.Users.Create do
-  alias Codex.Repo
+  alias Codex.{Error, Repo}
   alias Codex.Users.User
 
   def call(params) do
@@ -11,5 +11,5 @@ defmodule Codex.Users.Create do
 
   defp handle_insert({:ok, %User{}} = success), do: success
 
-  defp handle_insert({:error, _reason} = error), do: error
+  defp handle_insert({:error, reason}), do: {:error, Error.build(:unprocessable_entity, reason)}
 end

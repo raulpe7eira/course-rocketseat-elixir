@@ -6,9 +6,7 @@ defmodule Codex.Users.User do
   alias Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
-
   @required_params [:password]
-
   @derive {Jason.Encoder, only: [:id]}
 
   schema "users" do
