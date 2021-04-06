@@ -24,7 +24,7 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ## Chapter V
 
-- [ ] [Module 7 - Authentication API](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v7)
+- [x] [Module 7 - Authentication API](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v7)
 - [ ] [Module 8 - OTP](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v8)
 
 ## Chapter VI
