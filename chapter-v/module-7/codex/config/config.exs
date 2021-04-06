@@ -18,6 +18,15 @@ config :codex, Codex.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreing_key: [type: :binary_id]
 
+# Configures the guardian
+config :codex, CodexWeb.Auth.Guardian,
+  issuer: "codex",
+  secret_key: "sux1SfFsNc1gAeEELA0V2sQdERRBVqC9wqLKq99hHSFbjLMRk9lxZwHwA4xRddpH"
+
+config :codex, CodexWeb.Auth.Pipeline,
+  module: CodexWeb.Auth.Guardian,
+  error_handler: CodexWeb.Auth.ErrorHandler
+
 # Configures the endpoint
 config :codex, CodexWeb.Endpoint,
   url: [host: "localhost"],

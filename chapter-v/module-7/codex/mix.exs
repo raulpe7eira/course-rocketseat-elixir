@@ -57,7 +57,8 @@ defmodule Codex.MixProject do
       {:hackney, "~> 1.17.0"},
       {:bypass, "~> 2.1", only: :test},
       {:mox, "~> 1.0", only: :test},
-      {:pbkdf2_elixir, "~> 1.3"}
+      {:pbkdf2_elixir, "~> 1.3"},
+      {:guardian, "~> 2.0"}
     ]
   end
 
