@@ -1,8 +1,11 @@
 defmodule CodexWeb.Router do
   use CodexWeb, :router
 
+  alias CodexWeb.Plugs.TokenRefresher
+
   pipeline :api do
     plug :accepts, ["json"]
+    plug TokenRefresher
   end
 
   pipeline :api_auth do
