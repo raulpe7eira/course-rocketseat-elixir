@@ -6,11 +6,20 @@ defmodule Codex.ReposControllerTest do
 
   alias Codex.Error
   alias Codex.Github.ClientMock
+  alias CodexWeb.Auth.Guardian
 
   @login "raulpe7eira"
   @not_found_login "not-found"
 
   describe "show/2" do
+    setup %{conn: conn} do
+      user = insert(:user)
+      {:ok, token, _claims} = Guardian.encode_and_sign(user)
+      conn = put_req_header(conn, "authorization", "Bearer #{token}")
+
+      {:ok, conn: conn}
+    end
+
     test "when all params are valid, show the repos", %{conn: conn} do
       expect(ClientMock, :user_repos, fn @login ->
         {:ok, build_list(1, :repo)}
