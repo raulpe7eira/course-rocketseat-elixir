@@ -2,7 +2,7 @@
 
 This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
-> Continuation of the project that simulates a delivery.
+> The project that simulates a delivery.
 
 ## Previous installations
 
@@ -37,10 +37,16 @@ curl -X POST 'http://localhost:4000/api/users' \
     "name": "Raul"
 }'
 
-# retrieves user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# retrieves user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X GET 'http://localhost:4000/api/users/{id}'
 
-# updates user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# updates user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X PUT 'http://localhost:4000/api/users/{id}' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -48,7 +54,10 @@ curl -X PUT 'http://localhost:4000/api/users/{id}' \
     "password": "aaaaaa"
 }'
 
-# deletes user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# deletes user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X DELETE 'http://localhost:4000/api/users/{id}'
 
 # creates item
@@ -61,7 +70,11 @@ curl -X POST 'http://localhost:4000/api/items' \
     "photo": "/priv/photos/arroz_feijao.jpg"
 }'
 
-# creates order (note: replace {user_id} and {item_id} with the respective id)
+# creates order (
+#   replaces curly braces:
+#     {user_id} : user identifier
+#     {item_id} : item identifier
+# )
 curl -X POST 'http://localhost:4000/api/orders' \
 -H 'Content-Type: application/json' \
 -d '{

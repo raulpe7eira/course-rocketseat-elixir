@@ -111,7 +111,7 @@ defmodule DailyMealsWeb.UsersControllerTest do
       assert response == expected_response
     end
 
-    test "when thre is no user with given id, returns an error", %{conn: conn} do
+    test "when there is no user with given id, returns an error", %{conn: conn} do
       response =
         conn
         |> get(Routes.users_path(conn, :show, @not_found_id))

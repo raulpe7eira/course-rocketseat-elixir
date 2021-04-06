@@ -34,10 +34,16 @@ curl -X POST 'http://localhost:4000/api/users' \
     "email": "raul@mail.com"
 }'
 
-# retrieves user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# retrieves user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X GET 'http://localhost:4000/api/users/{id}'
 
-# updates user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# updates user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X PUT 'http://localhost:4000/api/users/{id}' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -45,10 +51,16 @@ curl -X PUT 'http://localhost:4000/api/users/{id}' \
     "email": "fulano@mail.com"
 }'
 
-# deletes user by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# deletes user by id (
+#   replaces curly braces:
+#     {id} : user identifier
+# )
 curl -X DELETE 'http://localhost:4000/api/users/{id}'
 
-# creates meal (note: replace {user_id} with the respective id)
+# creates meal (
+#   replaces curly braces:
+#     {user_id} : user identifier
+# )
 curl -X POST 'http://localhost:4000/api/meals' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -58,10 +70,16 @@ curl -X POST 'http://localhost:4000/api/meals' \
     "user_id": "{user_id}
 }'
 
-# retrieves meal by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# retrieves meal by id (
+#   replaces curly braces:
+#     {id} : meal identifier
+# )
 curl -X GET 'http://localhost:4000/api/meals/{id}'
 
-# updates meal by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# updates meal by id (
+#   replaces curly braces:
+#     {id} : meal identifier
+# )
 curl -X PUT 'http://localhost:4000/api/meals/{id}' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -69,6 +87,9 @@ curl -X PUT 'http://localhost:4000/api/meals/{id}' \
     "calorias": 30
 }'
 
-# deletes meal by id (i.e.: {id} = bca12dd5-0c6b-4fd3-bf1c-100394bf1725)
+# deletes meal by id (
+#   replaces curly braces:
+#     {id} : meal identifier
+# )
 curl -X DELETE 'http://localhost:4000/api/meals/{id}'
 ```

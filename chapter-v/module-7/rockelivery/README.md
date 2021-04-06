@@ -2,7 +2,7 @@
 
 This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
-> Continuation of the project that simulates a delivery.
+> The project that simulates a delivery.
 
 ## Previous installations
 

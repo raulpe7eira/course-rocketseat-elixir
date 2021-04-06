@@ -18,6 +18,9 @@ $ mix phx.server
 ## How to use?
 
 ```bash
-# retrieves github repos by user login (i.e.: {login} = raulpe7eira)
+# retrieves github repos by user login (
+#   replaces curly braces:
+#     {login} : github user login
+# )
 curl -X GET 'http://localhost:4000/api/repos/github/users/{login}'
 ```
