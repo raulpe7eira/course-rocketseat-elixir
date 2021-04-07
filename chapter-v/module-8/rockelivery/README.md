@@ -117,7 +117,7 @@ curl -X POST 'http://localhost:4000/api/orders' \
 
 ## Background processing
 
-An order report file is created every 10 seconds through the generic server ([`ReportRunner`](/lib/rockelivery/orders/report_runner.ex)).
+An order report file is created every 10 seconds through the generic server ([`ReportRunner`](../rockelivery/lib/rockelivery/orders/report_runner.ex)).
 
 ```bash
 # Default path and filename
