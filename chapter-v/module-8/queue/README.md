@@ -4,13 +4,14 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates queue service.
 
-## Compilation, tests, coverages and runs
+## Compilation, tests, coverages, reports and runs
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-v/module-8/queue
 $ mix compile
 $ mix test
 $ mix test --cover
+$ mix coveralls.html
 $ iex -S mix
 ```
 
