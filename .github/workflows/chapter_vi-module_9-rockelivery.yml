@@ -52,5 +52,10 @@ jobs:
     - name: Analyze code
       run: mix credo --strict
 
+    - name: Check coverage
+      run: mix coveralls.json
+      env:
+        MIX_ENV: test
+
     - name: Run tests
       run: mix test
