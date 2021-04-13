@@ -61,6 +61,7 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        flags: chapter_iii-module_4-daily_meals
 
     - name: Run tests
       run: mix test

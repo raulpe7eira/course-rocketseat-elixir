@@ -49,6 +49,7 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        flags: chapter_iv-module_6-codex
 
     - name: Run tests
       run: mix test

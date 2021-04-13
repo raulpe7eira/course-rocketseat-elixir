@@ -61,6 +61,7 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        flags: chapter_iv-module_5-rockelivery
 
     - name: Run tests
       run: mix test
