@@ -16,7 +16,7 @@ defmodule Flightex.Bookings.Report do
 
   def call(_from_date, _to_date, _filename), do: handle_date_error()
 
-  defp handle_date_error(), do: {:error, "Invalid from date or to date"}
+  defp handle_date_error, do: {:error, "Invalid from date or to date"}
 
   defp build_report(from, to) do
     BookingAgent.search_in_range(from, to)

@@ -16,6 +16,8 @@ defmodule Codex.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       alias Codex.Repo
@@ -28,10 +30,10 @@ defmodule Codex.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Codex.Repo)
+    :ok = Sandbox.checkout(Codex.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Codex.Repo, {:shared, self()})
+      Sandbox.mode(Codex.Repo, {:shared, self()})
     end
 
     :ok

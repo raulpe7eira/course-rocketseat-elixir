@@ -4,8 +4,8 @@ defmodule CodexTest do
   import Mox
   import Codex.Factory
 
-  alias Codex.Users.User
   alias Codex.Github.ClientMock
+  alias Codex.Users.User
 
   @login "raulpe7eira"
 

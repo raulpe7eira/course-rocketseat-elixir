@@ -3,7 +3,7 @@ defmodule DailyMeals.Meals.UpdateTest do
 
   import DailyMeals.Factory
 
-  alias DailyMeals.Meals.{Update, Meal}
+  alias DailyMeals.Meals.{Meal, Update}
 
   @update_params build(:meal_params, descricao: "Ovo", data: ~N[2021-03-24 17:00:00], calorias: 1)
   @invalid_params build(:meal_params, descricao: nil, data: nil, calorias: nil)

@@ -3,7 +3,7 @@ defmodule DailyMeals.Meals.RetrieveTest do
 
   import DailyMeals.Factory
 
-  alias DailyMeals.Meals.{Retrieve, Meal}
+  alias DailyMeals.Meals.{Meal, Retrieve}
 
   @not_found_id "aa614eb5-c662-454d-8239-1de0aa55b684"
 

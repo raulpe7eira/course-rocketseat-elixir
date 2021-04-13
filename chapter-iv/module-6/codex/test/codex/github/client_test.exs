@@ -1,9 +1,9 @@
 defmodule Codex.Github.ClientTest do
   use ExUnit.Case, async: true
 
-  alias Plug.Conn
   alias Codex.Error
   alias Codex.Github.{Client, Response}
+  alias Plug.Conn
 
   describe "user_repos/1" do
     setup do

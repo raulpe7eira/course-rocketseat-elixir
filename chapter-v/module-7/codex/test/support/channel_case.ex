@@ -17,6 +17,8 @@ defmodule CodexWeb.ChannelCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       # Import conveniences for testing with channels
@@ -29,10 +31,10 @@ defmodule CodexWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Codex.Repo)
+    :ok = Sandbox.checkout(Codex.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Codex.Repo, {:shared, self()})
+      Sandbox.mode(Codex.Repo, {:shared, self()})
     end
 
     :ok

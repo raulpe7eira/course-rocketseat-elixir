@@ -2,8 +2,8 @@ defmodule CodexWeb.Auth.Guardian do
   use Guardian, otp_app: :codex
 
   alias Codex.Error
-  alias Codex.Users.User
   alias Codex.Users.Retrieve, as: RetrieveUser
+  alias Codex.Users.User
 
   @ttl_login {1, :minute}
 
@@ -32,9 +32,8 @@ defmodule CodexWeb.Auth.Guardian do
   def authenticate(_), do: {:error, Error.build(:bad_request, "Invalid or missing params!")}
 
   def refresh_token(%{"token" => token}) do
-    with {:ok, _old_stuff, {new_token, _new_claims}} <- refresh(token, ttl: @ttl_login) do
-      {:ok, new_token}
-    else
+    case refresh(token, ttl: @ttl_login) do
+      {:ok, _old_stuff, {new_token, _new_claims}} -> {:ok, new_token}
       {:error, reason} -> {:error, Error.build(:unauthorized, reason)}
     end
   end

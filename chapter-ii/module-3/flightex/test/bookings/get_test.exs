@@ -3,8 +3,8 @@ defmodule Flightex.Bookings.GetTest do
 
   import Flightex.Factory
 
-  alias Flightex.Bookings.Get
   alias Flightex.Bookings.Agent, as: BookingAgent
+  alias Flightex.Bookings.Get
   alias Flightex.Users.Agent, as: UserAgent
 
   describe "call/1" do
