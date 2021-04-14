@@ -52,6 +52,9 @@ jobs:
     - name: Analyze code
       run: mix credo --strict
 
+    - name: Run tests
+      run: mix test
+
     - name: Check coverage
       run: mix coveralls.json
       env:
@@ -62,6 +65,3 @@ jobs:
       with:
         flags: chapter_iv-module_5-rockelivery
         token: ${{ secrets.CODECOV_TOKEN }}
-
-    - name: Run tests
-      run: mix test
