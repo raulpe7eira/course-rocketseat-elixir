@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-v/module-8/queue
+        working-directory: chapter-v/module-8/queue
 
     steps:
     - uses: actions/checkout@v2
@@ -48,8 +48,8 @@ jobs:
     - name: Report coverage
       uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
         flags: chapter_v-module_8-queue
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Run tests
       run: mix test

@@ -1,5 +1,7 @@
 # DailyMeals
 
+[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?flag=chapter_iii-module_4-daily_meals)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/tree/main/chapter-iii/module-4/daily_meals)
+
 This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
 > The project simulates a daily meals register.

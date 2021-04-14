@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-iv/module-6/codex
+        working-directory: chapter-iv/module-6/codex
 
     steps:
     - uses: actions/checkout@v2
@@ -48,8 +48,8 @@ jobs:
     - name: Report coverage
       uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
         flags: chapter_iv-module_6-codex
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Run tests
       run: mix test

@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-ii/module-3/flightex
+        working-directory: chapter-ii/module-3/flightex
 
     steps:
     - uses: actions/checkout@v2

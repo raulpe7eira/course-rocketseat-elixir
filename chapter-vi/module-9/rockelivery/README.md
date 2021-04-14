@@ -1,6 +1,6 @@
 # Rockelivery
 
-[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?token=78MHWOSZ6Q)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir)
+[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?flag=chapter_vi-module_9-rockelivery)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/tree/main/chapter-vi/module-9/rockelivery)
 
 This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 

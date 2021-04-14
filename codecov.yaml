@@ -1,3 +1,58 @@
+coverage:
+  status:
+    project:
+      default: off
+
+      chapter_iii-module_4-daily_meals:
+        flags: 
+          - chapter_iii-module_4-daily_meals
+        target: 100%
+
+      chapter_iii-module_4-rockelivery:
+        flags: 
+          - chapter_iii-module_4-rockelivery
+        target: 100%
+
+      chapter_iv-module_5-daily_meals:
+        flags: 
+          - chapter_iv-module_5-daily_meals
+        target: 100%
+
+      chapter_iv-module_6-codex:
+        flags: 
+          - chapter_iv-module_6-codex
+        target: 100%
+
+      chapter_iv-module_6-rockelivery:
+        flags: 
+          - chapter_iv-module_6-rockelivery
+        target: 100%
+
+      chapter_v-module_7-codex:
+        flags: 
+          - chapter_v-module_7-codex
+        target: 100%
+
+      chapter_v-module_7-rockelivery:
+        flags: 
+          - chapter_v-module_7-rockelivery
+        target: 100%
+
+      chapter_v-module_8-queue:
+        flags: 
+          - chapter_v-module_8-queue
+        target: 100%
+
+      chapter_v-module_8-rockelivery:
+        flags: 
+          - chapter_v-module_8-rockelivery
+        target: 100%
+
+      chapter_vi-module_9-rockelivery:
+        flags: 
+          - chapter_vi-module_9-rockelivery
+        target: 100%
+
 flags:
   chapter_iii-module_4-daily_meals:
     carryforward: true

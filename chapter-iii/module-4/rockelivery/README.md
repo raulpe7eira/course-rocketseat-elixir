@@ -1,5 +1,7 @@
 # Rockelivery
 
+[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?flag=chapter_iii-module_4-rockelivery)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/tree/main/chapter-iii/module-4/rockelivery)
+
 This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
 > The project that simulates a delivery.

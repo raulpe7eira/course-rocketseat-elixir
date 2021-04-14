@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-iii/module-4/rockelivery
+        working-directory: chapter-iii/module-4/rockelivery
 
     services:
       db:
@@ -60,8 +60,8 @@ jobs:
     - name: Report coverage
       uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
         flags: chapter_iii-module_4-rockelivery
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Run tests
       run: mix test

@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-i/module-2/reports_hours
+        working-directory: chapter-i/module-2/reports_hours
 
     steps:
     - uses: actions/checkout@v2

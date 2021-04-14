@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./chapter-i/module-1/list_length
+        working-directory: chapter-i/module-1/list_length
 
     steps:
     - uses: actions/checkout@v2
