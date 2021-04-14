@@ -1,7 +1,25 @@
+codecov:
+  branch: main
+  require_ci_to_pass: true
+
 coverage:
+  precision: 1
+
   status:
     project:
-      default: off
+      default:
+        flags:
+          - chapter_iii-module_4-daily_meals
+          - chapter_iii-module_4-rockelivery
+          - chapter_iv-module_5-daily_meals
+          - chapter_iv-module_5-rockelivery
+          - chapter_iv-module_6-codex
+          - chapter_iv-module_6-rockelivery
+          - chapter_v-module_7-codex
+          - chapter_v-module_7-rockelivery
+          - chapter_v-module_8-queue
+          - chapter_v-module_8-rockelivery
+          - chapter_vi-module_9-rockelivery
 
       chapter_iii-module_4-daily_meals:
         flags: 
@@ -16,6 +34,11 @@ coverage:
       chapter_iv-module_5-daily_meals:
         flags: 
           - chapter_iv-module_5-daily_meals
+        target: 100%
+
+      chapter_iv-module_5-rockelivery:
+        flags: 
+          - chapter_iv-module_5-rockelivery
         target: 100%
 
       chapter_iv-module_6-codex:

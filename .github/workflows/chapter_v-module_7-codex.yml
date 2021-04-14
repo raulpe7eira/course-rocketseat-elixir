@@ -55,13 +55,14 @@ jobs:
     - name: Run tests
       run: mix test
 
-    - name: Check coverage
+    - name: Generate coverage report
       run: mix coveralls.json
       env:
         MIX_ENV: test
 
-    - name: Report coverage
+    - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
+        fail_ci_if_error: true
         flags: chapter_v-module_7-codex
-        token: ${{ secrets.CODECOV_TOKEN }}s
+        token: ${{ secrets.CODECOV_TOKEN }}
