@@ -1,5 +1,7 @@
 # course-rocketseat-elixir
 
+[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?token=78MHWOSZ6Q)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir)
+
 This repository corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
 > This is a collection of projects.
