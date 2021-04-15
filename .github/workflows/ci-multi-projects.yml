@@ -1,0 +1,170 @@
+name: CI ~> Multi-projects
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ${{ matrix.project.directory }}
+
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        project:
+          - directory: chapter-i/module-1/list_filter
+            analyze: false
+            cover: false
+
+          - directory: chapter-i/module-1/list_length
+            analyze: false
+            cover: false
+
+          - directory: chapter-i/module-1/sum_list
+            analyze: false
+            cover: false
+
+          - directory: chapter-i/module-2/reports_generator
+            analyze: true
+            cover: false
+
+          - directory: chapter-i/module-2/reports_hours
+            analyze: true
+            cover: false
+
+          - directory: chapter-i/module-2/reports_hours_parallel
+            analyze: true
+            cover: false
+
+          - directory: chapter-ii/module-3/exlivery
+            analyze: true
+            cover: false
+
+          - directory: chapter-ii/module-3/flightex
+            analyze: true
+            cover: false
+
+          - directory: chapter-iii/module-4/daily_meals
+            flag: chapter_iii-module_4-daily_meals
+            analyze: true
+            cover: true
+
+          - directory: chapter-iii/module-4/rockelivery
+            flag: chapter_iii-module_4-rockelivery
+            analyze: true
+            cover: true
+
+          - directory: chapter-iv/module-5/daily_meals
+            flag: chapter_iv-module_5-daily_meals
+            analyze: true
+            cover: true
+
+          - directory: chapter-iv/module-5/rockelivery
+            flag: chapter_iv-module_5-rockelivery
+            analyze: true
+            cover: true
+
+          - directory: chapter-iv/module-6/codex
+            flag: chapter_iv-module_6-codex
+            analyze: true
+            cover: true
+
+          - directory: chapter-iv/module-6/rockelivery
+            flag: chapter_iv-module_6-rockelivery
+            analyze: true
+            cover: true
+
+          - directory: chapter-v/module-7/codex
+            flag: chapter_v-module_7-codex
+            analyze: true
+            cover: true
+
+          - directory: chapter-v/module-7/rockelivery
+            flag: chapter_v-module_7-rockelivery
+            analyze: true
+            cover: true
+
+          - directory: chapter-v/module-8/queue
+            flag: chapter_v-module_8-queue
+            analyze: true
+            cover: true
+
+          - directory: chapter-v/module-8/rockelivery
+            flag: chapter_v-module_8-rockelivery
+            analyze: true
+            cover: true
+
+          - directory: chapter-vi/module-9/rockelivery
+            flag: chapter_vi-module_9-rockelivery
+            analyze: true
+            cover: true
+
+    services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Elixir
+      uses: erlef/setup-elixir@885971a72ed1f9240973bd92ab57af8c1aa68f24
+      with:
+        elixir-version: '1.11.3' # Define the elixir version [required]
+        otp-version: '23.2' # Define the OTP version [required]
+
+    - name: Restore dependencies cache
+      uses: actions/cache@v2
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+
+    - name: Install dependencies
+      run: mix deps.get
+
+    - name: Check formatting
+      run: mix format --check-formatted
+
+    - name: Compile code
+      env:
+        MIX_ENV: test
+      run: mix compile
+
+    - if: ${{ matrix.project.analyze }}
+      name: Analyze code
+      env:
+        MIX_ENV: test
+      run: mix credo --strict
+
+    - name: Run tests
+      env:
+        MIX_ENV: test
+      run: mix test
+
+    - if: ${{ matrix.project.cover }}
+      name: Generate coverage report
+      env:
+        MIX_ENV: test
+      run: mix coveralls.json
+
+    - if: ${{ matrix.project.cover }}
+      name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
+        flags: ${{ matrix.project.flag }}
+        token: ${{ secrets.CODECOV_TOKEN }}
