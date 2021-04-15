@@ -20,6 +20,7 @@ coverage:
           - chapter_v-module_8-queue
           - chapter_v-module_8-rockelivery
           - chapter_vi-module_9-rockelivery
+        target: 100%
 
       chapter_iii-module_4-daily_meals:
         flags: 

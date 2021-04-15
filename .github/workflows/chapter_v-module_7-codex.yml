@@ -49,11 +49,20 @@ jobs:
     - name: Check formatting
       run: mix format --check-formatted
 
+    - name: Compile code
+      run: mix compile
+      env:
+        MIX_ENV: test
+
     - name: Analyze code
       run: mix credo --strict
+      env:
+        MIX_ENV: test
 
     - name: Run tests
       run: mix test
+      env:
+        MIX_ENV: test
 
     - name: Generate coverage report
       run: mix coveralls.json
@@ -65,4 +74,5 @@ jobs:
       with:
         fail_ci_if_error: true
         flags: chapter_v-module_7-codex
+        name: "chapter v > module 7 > codex"
         token: ${{ secrets.CODECOV_TOKEN }}

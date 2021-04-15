@@ -37,8 +37,17 @@ jobs:
     - name: Check formatting
       run: mix format --check-formatted
 
+    - name: Compile code
+      run: mix compile
+      env:
+        MIX_ENV: test
+
     - name: Analyze code
       run: mix credo --strict
+      env:
+        MIX_ENV: test
 
     - name: Run tests
       run: mix test
+      env:
+        MIX_ENV: test
