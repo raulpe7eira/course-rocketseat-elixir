@@ -74,5 +74,5 @@ jobs:
       with:
         fail_ci_if_error: true
         flags: chapter_iv-module_6-rockelivery
-        name: "chapter iv > module 6 > rockelivery"
+        name: "course - rocketseat - elixir"
         token: ${{ secrets.CODECOV_TOKEN }}

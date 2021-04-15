@@ -62,5 +62,5 @@ jobs:
       with:
         fail_ci_if_error: true
         flags: chapter_v-module_8-queue
-        name: "chapter v > module 8 > queue"
+        name: "course - rocketseat - elixir"
         token: ${{ secrets.CODECOV_TOKEN }}

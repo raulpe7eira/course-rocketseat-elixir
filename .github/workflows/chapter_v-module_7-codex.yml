@@ -74,5 +74,5 @@ jobs:
       with:
         fail_ci_if_error: true
         flags: chapter_v-module_7-codex
-        name: "chapter v > module 7 > codex"
+        name: "course - rocketseat - elixir"
         token: ${{ secrets.CODECOV_TOKEN }}

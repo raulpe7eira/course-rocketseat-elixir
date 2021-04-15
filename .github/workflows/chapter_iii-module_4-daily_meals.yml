@@ -74,5 +74,5 @@ jobs:
       with:
         fail_ci_if_error: true
         flags: chapter_iii-module_4-daily_meals
-        name: "chapter iii > module 4 > daily meals"
+        name: "course - rocketseat - elixir"
         token: ${{ secrets.CODECOV_TOKEN }}

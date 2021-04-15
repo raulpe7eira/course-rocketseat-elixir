@@ -3,7 +3,7 @@ codecov:
   require_ci_to_pass: true
 
 coverage:
-  precision: 1
+  precision: 2
 
   status:
     project:
@@ -132,3 +132,6 @@ flags:
     carryforward: true
     paths:
       - chapter-vi/module-9/rockelivery
+
+ignore:
+  - "**/*/test"
