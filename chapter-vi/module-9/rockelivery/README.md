@@ -8,11 +8,15 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 ## Previous installations
 
-Database, we recommends install [PostgreSQL](https://www.postgresql.org/) with [docker](https://hub.docker.com/_/postgres). After that, sets connection configuration at:
+**Database**, we recommends install [PostgreSQL](https://www.postgresql.org/) with [Docker](https://hub.docker.com/_/postgres). After that, sets connection configuration at:
 - `config/dev.exs`
 - `config/test.exs`
 
-## Gets dependencies, setups database, tests, coverages and starts application
+**PaaS**, we recommends install [Command-Line Interface for Gigalixir](https://gigalixir.readthedocs.io/en/latest/getting-started-guide.html#install-the-command-line-interface). After that, sets release configuration at:
+- `config/releases.exs`
+- `elixir_buildpack.config`
+
+## Gets dependencies, setups database, tests, coverages, reports and starts application
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-vi/module-9/rockelivery
@@ -20,6 +24,7 @@ $ mix deps.get
 $ mix ecto.setup
 $ mix test
 $ mix test --cover
+$ mix coveralls.html
 $ mix phx.server
 ```
 
@@ -125,3 +130,60 @@ An order report file is created every 10 seconds through the generic server ([`R
 # Default path and filename
 ./report.csv
 ```
+
+## How to deploy?
+
+```bash
+# locally
+# ======================
+
+# sets environment variables (
+#   replaces curly braces:
+#     {user} : database username
+#     {pass} : database password
+#     {db} : database name
+#     {app} : application name
+# )
+export SECRET_KEY_BASE="$(mix phx.gen.secret)"
+export DATABASE_URL="postgresql://{user}:{pass}@localhost:5432/{db}"
+MIX_ENV=prod 
+APP_NAME={app}
+PORT=4000
+
+# build release
+mix release
+
+# runs release
+_build/prod/rel/$APP_NAME/bin/$APP_NAME start
+
+# remotily in Gigalixir
+# ======================
+
+# creates app
+gigalixir create
+
+# provision a database
+gigalixir pg:create --free
+gigalixir config
+
+# deploy!
+git -c http.extraheader="GIGALIXIR-CLEAN: true" subtree push -P chapter-vi/module-9/rockelivery/ gigalixir main
+gigalixir ps
+
+# adds ssh keys
+gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"
+
+# runs migrations
+gigalixir ps:migrate
+
+# runs remote console
+gigalixir ps:remote_console
+
+# runs seeds in remote console
+seed_script = Path.join(["#{:code.priv_dir(:rockelivery)}", "repo", "seeds.exs"])
+Code.eval_file(seed_script)
+```
+
+# Uses in prodution
+
+> :rocket: https://ragged-short-deermouse.gigalixirapp.com/api

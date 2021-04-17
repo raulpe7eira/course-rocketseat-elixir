@@ -6,11 +6,18 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 > The project simulates a repositories client.
 
-## Gets dependencies, tests, coverages, reports and starts application
+## Previous installations
+
+**Database**, we recommends install [PostgreSQL](https://www.postgresql.org/) with [Docker](https://hub.docker.com/_/postgres). After that, sets connection configuration at:
+- `config/dev.exs`
+- `config/test.exs`
+
+## Gets dependencies, setups database, tests, coverages, reports and starts application
 
 ```bash
 $ cd course-rocketseat-elixir/chapter-v/module-7/codex
 $ mix deps.get
+$ mix ecto.setup
 $ mix test
 $ mix test --cover
 $ mix coveralls.html

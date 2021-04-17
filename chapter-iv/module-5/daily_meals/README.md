@@ -8,7 +8,7 @@ This code corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.co
 
 ## Previous installations
 
-Database, we recommends install [PostgreSQL](https://www.postgresql.org/) with [docker](https://hub.docker.com/_/postgres). After that, sets connection configuration at:
+**Database**, we recommends install [PostgreSQL](https://www.postgresql.org/) with [Docker](https://hub.docker.com/_/postgres). After that, sets connection configuration at:
 - `config/dev.exs`
 - `config/test.exs`
 
