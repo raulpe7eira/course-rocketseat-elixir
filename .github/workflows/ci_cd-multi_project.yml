@@ -168,3 +168,24 @@ jobs:
         fail_ci_if_error: true
         flags: ${{ matrix.project.flag }}
         token: ${{ secrets.CODECOV_TOKEN }}
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.1
+
+      - uses: mhanberg/gigalixir-action@v0.4.0
+        with:
+          GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
+          GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
+          GIGALIXIR_APP: webbed-rough-dromedary
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          MIGRATIONS: true
