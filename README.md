@@ -31,8 +31,4 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 ## Chapter VI
 
-- [ ] [Module 9 - CI/CD](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v9)
-
----
-
-**:construction: WIP :construction:**
+- [x] [Module 9 - CI and CD](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v9)
