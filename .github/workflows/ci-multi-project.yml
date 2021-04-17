@@ -1,4 +1,4 @@
-name: CI ~> Multi-projects
+name: CI ~> Multi-project
 
 on:
   push:
