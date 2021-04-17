@@ -202,7 +202,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix: ${{ needs.build.matrix }}
+      matrix: ${{ fromJson(needs.build.matrix) }}
 
     steps:
       - uses: actions/checkout@v2
