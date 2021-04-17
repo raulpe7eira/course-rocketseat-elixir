@@ -81,66 +81,54 @@ flags:
   chapter_iii-module_4-daily_meals:
     carryforward: true
     paths:
-      - "chapter-iii/module-4/daily_meals"
+      - chapter-iii/module-4/daily_meals
 
   chapter_iii-module_4-rockelivery:
     carryforward: true
     paths:
-      - "chapter-iii/module-4/rockelivery"
+      - chapter-iii/module-4/rockelivery
 
   chapter_iv-module_5-daily_meals:
     carryforward: true
     paths:
-      - "chapter-iv/module-5/daily_meals"
+      - chapter-iv/module-5/daily_meals
 
   chapter_iv-module_5-rockelivery:
     carryforward: true
     paths:
-      - "chapter-iv/module-5/rockelivery"
+      - chapter-iv/module-5/rockelivery
 
   chapter_iv-module_6-codex:
     carryforward: true
     paths:
-      - "chapter-iv/module-6/codex"
+      - chapter-iv/module-6/codex
 
   chapter_iv-module_6-rockelivery:
     carryforward: true
     paths:
-      - "chapter-iv/module-6/rockelivery"
+      - chapter-iv/module-6/rockelivery
 
   chapter_v-module_7-codex:
     carryforward: true
     paths:
-      - "chapter-v/module-7/codex"
+      - chapter-v/module-7/codex
 
   chapter_v-module_7-rockelivery:
     carryforward: true
     paths:
-      - "chapter-v/module-7/rockelivery"
+      - chapter-v/module-7/rockelivery
 
   chapter_v-module_8-queue:
     carryforward: true
     paths:
-      - "chapter-v/module-8/queue"
+      - chapter-v/module-8/queue
 
   chapter_v-module_8-rockelivery:
     carryforward: true
     paths:
-      - "chapter-v/module-8/rockelivery"
+      - chapter-v/module-8/rockelivery
 
   chapter_vi-module_9-rockelivery:
     carryforward: true
     paths:
-      - "chapter-vi/module-9/rockelivery"
-
-fixes:
-  - "::chapter-vi/module-9/rockelivery"
-
-ignore:
-  - "**/*/deps"
-  - "**/*/lib/*/channels/user_socket.ex",
-  - "**/*/lib/*_web/endpoint.ex"
-  - "**/*/lib/*_web/gettext.ex"
-  - "**/*/lib/*_web/router.ex"
-  - "**/*/lib/*_web/telemetry.ex"
-  - "**/*/test"
+      - chapter-vi/module-9/rockelivery
