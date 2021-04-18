@@ -184,6 +184,8 @@ seed_script = Path.join(["#{:code.priv_dir(:rockelivery)}", "repo", "seeds.exs"]
 Code.eval_file(seed_script)
 ```
 
+> The [`Dockerfile`](../rockelivery/Dockerfile), which is at the root of the project, is an example to use in another PaaS.
+
 # Uses in prodution
 
-> :rocket: https://ragged-short-deermouse.gigalixirapp.com/api
+:rocket: https://ragged-short-deermouse.gigalixirapp.com/api
