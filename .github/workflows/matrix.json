@@ -119,7 +119,7 @@
             "deploy": false
         },
         {
-            "app": "ragged-short-deermouse",
+            "app": "thrifty-madeup-jaguar",
             "directory": "chapter-vi/module-9/rockelivery",
             "flag": "chapter_vi-module_9-rockelivery",
             "analyze": true,

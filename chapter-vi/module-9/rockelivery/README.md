@@ -167,14 +167,17 @@ gigalixir pg:create --free
 gigalixir config
 
 # deploy!
-git -c http.extraheader="GIGALIXIR-CLEAN: true" subtree push -P chapter-vi/module-9/rockelivery/ gigalixir main
+git -c http.extraheader="GIGALIXIR-CLEAN: true" subtree push -P chapter-vi/module-9/rockelivery/ gigalixir master
 gigalixir ps
 
 # adds ssh keys
 gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"
 
-# runs migrations
-gigalixir ps:migrate
+# runs migrations (
+#   replaces curly braces:
+#     {app} : application name return by `gigalixir create`
+# )
+gigalixir ps:migrate -a {app}
 
 # runs remote console
 gigalixir ps:remote_console
@@ -188,4 +191,4 @@ Code.eval_file(seed_script)
 
 # Uses in prodution
 
-:rocket: https://ragged-short-deermouse.gigalixirapp.com/api
+:rocket: https://thrifty-madeup-jaguar.gigalixirapp.com/api

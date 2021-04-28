@@ -1,8 +1,6 @@
 defmodule ReportsHoursParallelTest do
   use ExUnit.Case
 
-  alias ReportsHoursParallel.Report
-
   describe "build/1" do
     test "when a file list is provided, builds the report" do
       file_names = ["part_test.csv", "part_test.csv"]

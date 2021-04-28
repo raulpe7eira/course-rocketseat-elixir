@@ -1,8 +1,6 @@
 defmodule ReportsHoursTest do
   use ExUnit.Case
 
-  alias ReportsHours.Report
-
   describe "build/1" do
     test "builds the report" do
       file_name = "gen_report_test.csv"
