@@ -170,14 +170,19 @@ gigalixir config
 git -c http.extraheader="GIGALIXIR-CLEAN: true" subtree push -P chapter-vi/module-9/rockelivery/ gigalixir master
 gigalixir ps
 
-# adds ssh keys
-gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"
+# generate gigalixir ssh key called gigalixir_rsa (
+#   without password when use in github action
+# )
+ssh-keygen -t rsa -b 4096 -C "Gigalixir SSH Key"
 
-# runs migrations (
+# adds ssh key generated
+gigalixir account:ssh_keys:add "$(cat gigalixir_rsa.pub)"
+
+# runs migrations with ssh key generated (
 #   replaces curly braces:
 #     {app} : application name return by `gigalixir create`
 # )
-gigalixir ps:migrate -a {app}
+gigalixir ps:migrate -a {app} -o "-i gigalixir_rsa"
 
 # runs remote console
 gigalixir ps:remote_console
