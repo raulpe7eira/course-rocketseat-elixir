@@ -1,6 +1,6 @@
 # course-rocketseat-elixir
 
-[![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?token=78MHWOSZ6Q)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir)
+[![Multi-project CI/CD](https://github.com/raulpe7eira/course-rocketseat-elixir/actions/workflows/ci_cd-multi_project.yml/badge.svg)](https://github.com/raulpe7eira/course-rocketseat-elixir/actions/workflows/ci_cd-multi_project.yml) [![codecov](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir/branch/main/graph/badge.svg?token=78MHWOSZ6Q)](https://codecov.io/gh/raulpe7eira/course-rocketseat-elixir)
 
 This repository corresponding to the [Ignite, Trilha Elixir](https://app.rocketseat.com.br/ignite/elixir/) lab.
 
