@@ -130,7 +130,7 @@ jobs:
 
       - name: Deploying to Gigalixir
         if: matrix.project.deploy
-        uses: raulpe7eira/gigalixir-action@main
+        uses: mhanberg/gigalixir-action@v0.6.0
         with:
           APP_SUBFOLDER: ${{ matrix.project.directory }}
           GIGALIXIR_APP: ${{ matrix.project.app }}
