@@ -6,6 +6,8 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 
 > This is a collection of projects.
 
+---
+
 ## Chapter I
 
 - [x] [Module 1 - Fundamentals of Elixir](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v1)
@@ -32,3 +34,9 @@ This repository corresponding to the [Ignite, Trilha Elixir](https://app.rockets
 ## Chapter VI
 
 - [x] [Module 9 - CI and CD](https://github.com/raulpe7eira/course-rocketseat-elixir/releases/tag/v9)
+
+---
+
+## :trophy: Certificate of completion
+
+[English](https://drive.google.com/file/d/1Sa5dTfmZlGkQl39TFECG6hyLvJ8z1YtI/view?usp=sharing) | [Portuguese](https://drive.google.com/file/d/1mxrKaIsgP37nnVwmeFeRJQNPEengXUx1/view?usp=sharing)
